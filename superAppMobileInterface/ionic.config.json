@@ -1,0 +1,7 @@
+{
+  "name": "superAppMobileInterface",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "ionic-angular"
+}
