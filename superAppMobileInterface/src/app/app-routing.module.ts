@@ -5,7 +5,10 @@ import { ApplicationPage } from "../pages/application/application";
 const routes: Routes = [
   {
     path: "application",
-    component: ApplicationPage,
+    loadChildren: () =>
+      import("../pages/application/application.module").then(
+        (m) => m.ApplicationModule
+      ),
   },
 ];
 

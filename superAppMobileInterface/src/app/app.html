@@ -1,35 +1,25 @@
-<ion-menu [content]="content" type="overlay">
+<!-- <ion-menu [content]="content" type="overlay">
   <ion-header>
     <ion-toolbar>
       <ion-title>Menu</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <ion-content>
-    <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
-      </button>
-    </ion-list>
-  </ion-content>
-
 </ion-menu>
 
-<ion-nav #content swipeBackEnabled="false"></ion-nav>
+<ion-nav #content swipeBackEnabled="false"></ion-nav> -->
 
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
     <ion-title>Super App Mobile</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding class="main-content">
   <h1>Bem vindo!</h1>
-  <p>Acompanhe novidades de animes, preços de jogo na Steam, lançamentos e informações a respeito da SpaceX,
-    e conheça músicas novas para você entrar no clima geek com nosso humilde app que relaciona 4 API's :)
+  <p>
+    Acompanhe novidades de animes, preços de jogo na Steam, lançamentos e
+    informações a respeito da SpaceX, e conheça músicas novas para você entrar
+    no clima geek com nosso humilde app que relaciona 4 API's :)
   </p>
 
   <div class="card-area">
@@ -44,13 +34,13 @@
         <ion-card-title>Games</ion-card-title>
       </ion-card-content>
     </ion-card>
-    
+
     <ion-card>
       <ion-card-content>
         <ion-card-title>SpaceX</ion-card-title>
       </ion-card-content>
     </ion-card>
-    
+
     <ion-card>
       <ion-card-content>
         <ion-card-title>Músicas</ion-card-title>
