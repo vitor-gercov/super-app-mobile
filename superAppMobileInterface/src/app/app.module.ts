@@ -3,19 +3,21 @@ import { ErrorHandler, NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 import { AnimesPage } from '../pages/animes/animes';
+import { GamesPage } from '../pages/games/games';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { SpacexPage } from '../pages/spacex/spacex';
+import { MusicPage } from '../pages/music/music';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
-    ListPage,
-    AnimesPage
+    AnimesPage,
+    GamesPage,
+    SpacexPage,
+    MusicPage
   ],
   imports: [
     BrowserModule,
@@ -25,9 +27,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
-    ListPage,
-    AnimesPage
+    AnimesPage,
+    GamesPage,
+    SpacexPage,
+    MusicPage
   ],
   providers: [
     StatusBar,
