@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, ViewChild } from "@angular/core";
+import { IonicPage, Nav, NavController, NavParams } from "ionic-angular";
+import { AnimesPage } from "../animes/animes";
+import { GamesPage } from "../games/games";
+import { SpacexPage } from "../spacex/spacex";
 
 /**
  * Generated class for the HomePage page.
@@ -10,16 +13,21 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html',
+  selector: "page-home",
+  templateUrl: "home.html",
 })
 export class HomePage {
+  gamePage = GamesPage;
+  animePage = AnimesPage;
+  spacex = SpacexPage;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad HomePage');
+    console.log("ionViewDidLoad HomePage");
   }
 
+  openPage(page) {
+    this.navCtrl.setRoot(page);
+  }
 }

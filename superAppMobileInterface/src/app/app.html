@@ -12,10 +12,9 @@
       </button>
     </ion-list>
   </ion-content>
-
 </ion-menu>
 
-<ion-nav #content swipeBackEnabled="false"></ion-nav>
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
 
 <ion-header>
   <ion-navbar>
@@ -26,35 +25,4 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding class="main-content">
-  <h1>Bem vindo!</h1>
-  <p>Acompanhe novidades de animes, preços de jogo na Steam, lançamentos e informações a respeito da SpaceX,
-    e conheça músicas novas para você entrar no clima geek com nosso humilde app que relaciona 4 API's :)
-  </p>
-
-  <div class="card-area">
-    <ion-card>
-      <ion-card-content>
-        <ion-card-title>Animes</ion-card-title>
-      </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-      <ion-card-content>
-        <ion-card-title>Games</ion-card-title>
-      </ion-card-content>
-    </ion-card>
-    
-    <ion-card>
-      <ion-card-content>
-        <ion-card-title>SpaceX</ion-card-title>
-      </ion-card-content>
-    </ion-card>
-    
-    <ion-card>
-      <ion-card-content>
-        <ion-card-title>Músicas</ion-card-title>
-      </ion-card-content>
-    </ion-card>
-  </div>
-</ion-content>
+<router-outlet></router-outlet>
