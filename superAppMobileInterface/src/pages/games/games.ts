@@ -25,9 +25,13 @@ export class GamesPage {
 
   gamesList: [] = []
 
+<<<<<<< HEAD
   async ionViewDidLoad() {  
 
     this.getGames()
+=======
+    console.log(await this.gameService.getAllGames());
+>>>>>>> 5ce5efd9ab74b37cc50d8134f5392601cefa7767
   }
 
   getGames = async () => {
