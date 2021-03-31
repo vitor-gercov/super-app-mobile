@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { AnimeService } from '../../services/anime.service';
 
 @Component({
   selector: 'page-animes',
@@ -7,8 +8,12 @@ import { NavController } from 'ionic-angular';
 })
 export class AnimesPage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, private animeService:AnimeService) {
   
   }
-  
+
+  async ionViewDidLoad() {
+    console.log(await this.animeService.getAllAnimes());
+  }
+
 }

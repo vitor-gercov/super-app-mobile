@@ -24,7 +24,7 @@ export class GamesPage {
 
   async ionViewDidLoad() {
 
-    console.log(JSON.stringify(await this.gameService.getAllGames()));
+    console.log(await this.gameService.getAllGames());
   }
 
 }

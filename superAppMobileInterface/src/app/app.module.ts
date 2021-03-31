@@ -13,6 +13,7 @@ import { SpacexPage } from "../pages/spacex/spacex";
 
 import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
+import { AnimeService } from "../services/anime.service";
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { SplashScreen } from "@ionic-native/splash-screen";
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    GameService
+    GameService,
+    AnimeService
   ],
 })
 export class AppModule {}
