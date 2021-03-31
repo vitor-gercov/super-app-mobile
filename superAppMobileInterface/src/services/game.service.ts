@@ -8,6 +8,6 @@ export class GameService {
 
     getAllGames = (): Promise<any> => {
 
-        return this.http.get<any>('https://www.cheapshark.com/api/1.0/deals').toPromise()
+        return this.http.get<any>('https://www.cheapshark.com/api/1.0/deals?onSale=1').toPromise()
     }
 }

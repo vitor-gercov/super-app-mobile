@@ -20,11 +20,34 @@ export class GamesPage {
     
     public navCtrl: NavController, 
     public navParams: NavParams,
-    private gameService: GameService) {}
+    private gameService: GameService
+  ) {}
 
-  async ionViewDidLoad() {
+  gamesList: [] = []
 
-    console.log(JSON.stringify(await this.gameService.getAllGames()));
+  async ionViewDidLoad() {  
+
+    this.getGames()
   }
 
+  getGames = async () => {
+
+    let resultList = await this.gameService.getAllGames()
+
+    let gameObj = {}
+
+    resultList.forEach(resultItem => {
+      
+      gameObj = {
+
+        name: resultItem.title,
+        salePrice: resultItem.salePrice,
+        normalPrice: resultItem.normalPrice
+      }
+
+      this.gamesList.push(gameObj)
+
+      gameObj = {}
+    });
+  }
 }
