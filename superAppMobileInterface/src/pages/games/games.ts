@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { GameService } from '../../services/game.service';
 
 /**
  * Generated class for the GamesPage page.
@@ -15,11 +16,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class GamesPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  constructor(
+    
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    private gameService: GameService) {}
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad GamesPage');
+  async ionViewDidLoad() {
+
+    console.log(JSON.stringify(await this.gameService.getAllGames()));
   }
 
 }
