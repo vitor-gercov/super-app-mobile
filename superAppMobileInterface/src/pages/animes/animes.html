@@ -7,8 +7,13 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/qig4KOK2R2g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+<ion-content>
+  <div class="animePage">
+    <ion-card class="animeCard" *ngFor="let anime of animeList.data" >
+      <img [src]="anime.attributes.posterImage.small">
+      <h2>{{anime.attributes.canonicalTitle}}</h2>
+    </ion-card>
+    <button ion-button secondary menuToggle>Toggle Menu</button>
+  </div>
 </ion-content>
+

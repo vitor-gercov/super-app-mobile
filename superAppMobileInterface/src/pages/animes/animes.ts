@@ -8,12 +8,14 @@ import { AnimeService } from '../../services/anime.service';
 })
 export class AnimesPage {
 
+  animeList:any = {};
   constructor(public navCtrl: NavController, private animeService:AnimeService) {
   
   }
 
   async ionViewDidLoad() {
-    console.log(await this.animeService.getAllAnimes());
+    this.animeList = await this.animeService.getAllAnimes();
+    console.log(this.animeList);
   }
 
 }
