@@ -9,13 +9,25 @@ import { AnimeService } from '../../services/anime.service';
 export class AnimesPage {
 
   animeList:any = {};
+  pageNumber = 0;
   constructor(public navCtrl: NavController, private animeService:AnimeService) {
   
   }
 
   async ionViewDidLoad() {
-    this.animeList = await this.animeService.getAllAnimes();
+    this.animeList = await this.animeService.getAllAnimes(this.pageNumber);
     console.log(this.animeList);
   }
 
+  async nextPage(){
+    this.pageNumber += 10;
+    this.animeList = await this.animeService.getAllAnimes(this.pageNumber);
+    console.log(this.animeList);
+  }
+
+  async previousPage(){
+    this.pageNumber -= 10;
+    this.animeList = await this.animeService.getAllAnimes(this.pageNumber);
+    console.log(this.animeList);
+  }
 }

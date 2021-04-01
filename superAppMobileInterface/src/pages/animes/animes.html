@@ -13,7 +13,13 @@
       <img [src]="anime.attributes.posterImage.small">
       <h2>{{anime.attributes.canonicalTitle}}</h2>
     </ion-card>
-    <button ion-button secondary menuToggle>Toggle Menu</button>
+    
   </div>
+
+  <div class="nextPage">
+      <button ion-button (click)="previousPage()" *ngIf="pageNumber !== 0">Previous Page</button>
+      <button ion-button (click)="nextPage()">Next Page</button>
+  </div>
+  
 </ion-content>
 
