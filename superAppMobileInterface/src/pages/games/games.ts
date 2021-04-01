@@ -23,7 +23,7 @@ export class GamesPage {
     private gameService: GameService
   ) {}
 
-  gamesList: [] = []
+  gamesList:any[] = []
 
   async ionViewDidLoad() {  
 
