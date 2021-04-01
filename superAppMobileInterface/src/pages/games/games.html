@@ -7,4 +7,11 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding> TESTE </ion-content>
+<ion-content padding> 
+  
+  <div *ngFor="let game of gamesList">
+    <h4>{{game.name}}</h4>
+    <p>Preço em promoção: U${{game.salePrice}}</p>
+    <p>Preço normalmente: U${{game.normalPrice}}</p>
+  </div>
+</ion-content>
