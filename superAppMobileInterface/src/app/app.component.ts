@@ -7,6 +7,7 @@ import { GamesPage } from "../pages/games/games";
 import { SpacexPage } from "../pages/spacex/spacex";
 import { HomePage } from "../pages/home/home";
 import { Router } from "@angular/router";
+import { AnimeService } from "../services/anime.service";
 
 @Component({
   templateUrl: "app.html",
@@ -22,6 +23,7 @@ export class MyApp {
     public platform: Platform,
     public statusBar: StatusBar,
     public splashScreen: SplashScreen,
+    private animeService: AnimeService,
     private router: Router
   ) {
     this.initializeApp();
@@ -42,6 +44,9 @@ export class MyApp {
   }
 
   openPage(page) {
+    if (page.route === "games" || page.route === "spacex") {
+      this.animeService.pageNumber = 0;
+    }
     this.router.navigate([page.route]);
   }
 }

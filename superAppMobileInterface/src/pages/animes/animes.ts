@@ -11,22 +11,23 @@ import { AnimeService } from "../../services/anime.service";
 })
 export class AnimesPage implements OnInit {
   animeList = new BehaviorSubject<any>({});
-  pageNumber = 0;
-  constructor(private animeService: AnimeService, private router: Router) {}
+
+  constructor(public animeService: AnimeService, private router: Router) {}
+
   async ngOnInit() {
-    this.animeList.next(await this.animeService.getAllAnimes(this.pageNumber));
+    this.animeList.next(await this.animeService.getAllAnimes());
   }
 
   async ionViewDidLoad() {}
 
   async nextPage() {
-    this.pageNumber += 10;
-    this.animeList.next(await this.animeService.getAllAnimes(this.pageNumber));
+    this.animeService.pageNumber += 10;
+    this.animeList.next(await this.animeService.getAllAnimes());
   }
 
   async previousPage() {
-    this.pageNumber -= 10;
-    this.animeList.next(await this.animeService.getAllAnimes(this.pageNumber));
+    this.animeService.pageNumber -= 10;
+    this.animeList.next(await this.animeService.getAllAnimes());
   }
 
   openAnimePage(anime) {
