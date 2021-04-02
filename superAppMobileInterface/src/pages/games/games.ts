@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { GameService } from '../../services/game.service';
+import { Component, OnInit } from "@angular/core";
+import { IonicPage, NavController, NavParams } from "ionic-angular";
+import { GameService } from "../../services/game.service";
 
 /**
  * Generated class for the GamesPage page.
@@ -11,43 +11,33 @@ import { GameService } from '../../services/game.service';
 
 @IonicPage()
 @Component({
-  selector: 'page-games',
-  templateUrl: 'games.html',
+  selector: "page-games",
+  templateUrl: "games.html",
 })
-export class GamesPage {
+export class GamesPage implements OnInit {
+  constructor(private gameService: GameService) {}
 
-  constructor(
-    
-    public navCtrl: NavController, 
-    public navParams: NavParams,
-    private gameService: GameService
-  ) {}
+  gamesList: any[] = [];
 
-  gamesList:any[] = []
-
-  async ionViewDidLoad() {  
-
-    this.getGames()
+  async ngOnInit() {
+    this.getGames();
   }
 
   getGames = async () => {
+    let resultList = await this.gameService.getAllGames();
 
-    let resultList = await this.gameService.getAllGames()
+    let gameObj = {};
 
-    let gameObj = {}
-
-    resultList.forEach(resultItem => {
-      
+    resultList.forEach((resultItem) => {
       gameObj = {
-
         name: resultItem.title,
         salePrice: resultItem.salePrice,
-        normalPrice: resultItem.normalPrice
-      }
+        normalPrice: resultItem.normalPrice,
+      };
 
-      this.gamesList.push(gameObj)
+      this.gamesList.push(gameObj);
 
-      gameObj = {}
+      gameObj = {};
     });
-  }
+  };
 }

@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component } from "@angular/core";
+import { IonicPage, NavController, NavParams } from "ionic-angular";
 
 /**
  * Generated class for the SpacexPage page.
@@ -10,16 +10,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-spacex',
-  templateUrl: 'spacex.html',
+  selector: "page-spacex",
+  templateUrl: "spacex.html",
 })
 export class SpacexPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  constructor() {}
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SpacexPage');
+    console.log("ionViewDidLoad SpacexPage");
   }
-
 }

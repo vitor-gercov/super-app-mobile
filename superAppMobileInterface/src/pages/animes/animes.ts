@@ -1,33 +1,35 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { AnimeService } from '../../services/anime.service';
+import { ChangeDetectorRef, Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
+import { IonicPage, NavController } from "ionic-angular";
+import { BehaviorSubject } from "rxjs";
+import { AnimeService } from "../../services/anime.service";
 
+@IonicPage()
 @Component({
-  selector: 'page-animes',
-  templateUrl: 'animes.html',
+  selector: "page-animes",
+  templateUrl: "animes.html",
 })
-export class AnimesPage {
-
-  animeList:any = {};
+export class AnimesPage implements OnInit {
+  animeList = new BehaviorSubject<any>({});
   pageNumber = 0;
-  constructor(public navCtrl: NavController, private animeService:AnimeService) {
-  
+  constructor(private animeService: AnimeService, private router: Router) {}
+  async ngOnInit() {
+    this.animeList.next(await this.animeService.getAllAnimes(this.pageNumber));
   }
 
-  async ionViewDidLoad() {
-    this.animeList = await this.animeService.getAllAnimes(this.pageNumber);
-    console.log(this.animeList);
-  }
+  async ionViewDidLoad() {}
 
-  async nextPage(){
+  async nextPage() {
     this.pageNumber += 10;
-    this.animeList = await this.animeService.getAllAnimes(this.pageNumber);
-    console.log(this.animeList);
+    this.animeList.next(await this.animeService.getAllAnimes(this.pageNumber));
   }
 
-  async previousPage(){
+  async previousPage() {
     this.pageNumber -= 10;
-    this.animeList = await this.animeService.getAllAnimes(this.pageNumber);
-    console.log(this.animeList);
+    this.animeList.next(await this.animeService.getAllAnimes(this.pageNumber));
+  }
+
+  openAnimePage(anime) {
+    this.router.navigate(["animes", anime.id]);
   }
 }

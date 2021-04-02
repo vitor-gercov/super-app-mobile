@@ -6,6 +6,7 @@ import { AnimesPage } from "../pages/animes/animes";
 import { GamesPage } from "../pages/games/games";
 import { SpacexPage } from "../pages/spacex/spacex";
 import { HomePage } from "../pages/home/home";
+import { Router } from "@angular/router";
 
 @Component({
   templateUrl: "app.html",
@@ -15,20 +16,21 @@ export class MyApp {
 
   rootPage: any = HomePage;
 
-  pages: Array<{ title: string; component: any }>;
+  pages: Array<{ title: string; route: any }>;
 
   constructor(
     public platform: Platform,
     public statusBar: StatusBar,
-    public splashScreen: SplashScreen
+    public splashScreen: SplashScreen,
+    private router: Router
   ) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: "Animes", component: AnimesPage },
-      { title: "Games", component: GamesPage },
-      { title: "SpaceX", component: SpacexPage }
+      { title: "Animes", route: "animes" },
+      { title: "Games", route: "games" },
+      { title: "SpaceX", route: "spacex" },
     ];
   }
 
@@ -40,6 +42,6 @@ export class MyApp {
   }
 
   openPage(page) {
-    this.nav.setRoot(page.component);
+    this.router.navigate([page.route]);
   }
 }
