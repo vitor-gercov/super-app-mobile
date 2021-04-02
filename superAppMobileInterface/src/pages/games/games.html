@@ -7,11 +7,12 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding> 
+<ion-content padding id="main-content"> 
   
-  <div *ngFor="let game of gamesList">
+  <div class="gameCard" *ngFor="let game of gamesList" style="background-image: url(game.image);">
     <h4>{{game.name}}</h4>
     <p>Preço em promoção: U${{game.salePrice}}</p>
     <p>Preço normalmente: U${{game.normalPrice}}</p>
+    <p>Loja com a promoção: <a [href]="game.storeLink" target="_blank">{{game.storeName}}</a></p>
   </div>
 </ion-content>

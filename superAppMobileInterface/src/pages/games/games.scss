@@ -1,3 +1,15 @@
-page-games {
+#main-content {
 
+  background: rgb(83, 83, 83);
+  color: rgb(223, 223, 223);
+}
+
+.gameCard {
+
+    margin-bottom: 5rem;
+
+    a {
+        text-decoration: none;
+        color: whitesmoke;
+    }
 }
