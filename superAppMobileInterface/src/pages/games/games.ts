@@ -19,15 +19,14 @@ export class GamesPage implements OnInit {
 
   gamesList: any[] = [];
 
-<<<<<<< HEAD
   async ngOnInit() {
-    this.getGames();
-=======
-  gamesList: any[] = []
-  storesList: any[] = []
+    await this.getGames();
+    await this.getStores();
+  }
+
+  storesList: any[] = [];
 
   storesLinks: string[] = [
-
     "https://store.steampowered.com",
     "https://www.amazon.com.br",
     "https://www.gamestop.com",
@@ -36,14 +35,11 @@ export class GamesPage implements OnInit {
     "https://www.humblebundle.com",
     "https://store.ubi.com",
     "https://www.epicgames.com",
-    "https://us.shop.battle.net/en-us"
-  ]
+    "https://us.shop.battle.net/en-us",
+  ];
 
-  async ionViewDidLoad() {  
-
-    await this.getGames()
-    await this.getStores()
->>>>>>> 995ac5c02c991bee12510b1a8e476c9f478e8528
+  async ionViewDidLoad() {
+    await this.getGames();
   }
 
   getGames = async () => {
@@ -57,116 +53,90 @@ export class GamesPage implements OnInit {
         storeId: resultItem.storeID,
         salePrice: resultItem.salePrice,
         normalPrice: resultItem.normalPrice,
-<<<<<<< HEAD
+        storeName: "",
+        storeLink: "#",
       };
-=======
-        storeName: '',
-        storeLink: '#'
-      }
->>>>>>> 995ac5c02c991bee12510b1a8e476c9f478e8528
 
       this.gamesList.push(gameObj);
 
       gameObj = {};
     });
-<<<<<<< HEAD
   };
-=======
-  }
 
   getStores = async () => {
+    let resultList = await this.gameService.getAllStores();
 
-    let resultList = await this.gameService.getAllStores()
+    let storeObj: any = {};
 
-    let storeObj = {}
-
-    resultList.forEach(resultItem => {
-      
+    resultList.forEach((resultItem) => {
       storeObj = {
-
         id: resultItem.storeID,
         name: resultItem.storeName,
-        active: resultItem.isActive
-      }
+        active: resultItem.isActive,
+      };
 
-      if (storeObj.active) this.storesList.push(storeObj)
+      if (storeObj.active) this.storesList.push(storeObj);
 
-      storeObj = {}
+      storeObj = {};
     });
 
-    this.gamesList.forEach(game => {
-
-      this.storesList.forEach(store => {
-        
+    this.gamesList.forEach((game) => {
+      this.storesList.forEach((store) => {
         if (game.storeId === store.id) {
-          
-          game.storeName = store.name
-          return
-        } 
-      })
-    })
+          game.storeName = store.name;
+          return;
+        }
+      });
+    });
 
-    this.gamesList = this.setStoreLinks(this.gamesList)
-    console.log(this.gamesList)
-  }
+    this.gamesList = this.setStoreLinks(this.gamesList);
+    console.log(this.gamesList);
+  };
 
   setStoreLinks = (games: any[]) => {
-
-    games.forEach(game => {
-
+    games.forEach((game) => {
       switch (game.storeName) {
-
-        case 'Steam':
-
-          game.storeLink = this.storesLinks[0]
+        case "Steam":
+          game.storeLink = this.storesLinks[0];
           break;
 
-        case 'Amazon':
-          
-          game.storeLink = this.storesLinks[1]
+        case "Amazon":
+          game.storeLink = this.storesLinks[1];
           break;
-        
-        case 'GameStop':
-          
-          game.storeLink = this.storesLinks[2]
+
+        case "GameStop":
+          game.storeLink = this.storesLinks[2];
           break;
-    
-        case 'GOG':
-          
-          game.storeLink = this.storesLinks[3]
+
+        case "GOG":
+          game.storeLink = this.storesLinks[3];
           break;
-      
-        case 'Origin':
-          
-          game.storeLink = this.storesLinks[4]
+
+        case "Origin":
+          game.storeLink = this.storesLinks[4];
           break;
-    
-        case 'Humble Store':
-          
-          game.storeLink = this.storesLinks[5]
+
+        case "Humble Store":
+          game.storeLink = this.storesLinks[5];
           break;
-        
-        case 'Uplay':
-          
-          game.storeLink = this.storesLinks[6]
+
+        case "Uplay":
+          game.storeLink = this.storesLinks[6];
           break;
-      
-        case 'Epic Games Store':
-          
-          game.storeLink = this.storesLinks[7]
+
+        case "Epic Games Store":
+          game.storeLink = this.storesLinks[7];
           break;
-    
-        case 'Blizzard Shop':
-          
-          game.storeLink = this.storesLinks[8]
+
+        case "Blizzard Shop":
+          game.storeLink = this.storesLinks[8];
           break;
-      
+
         default:
           break;
       }
-    })
+    });
 
-    return games
-  }
->>>>>>> 995ac5c02c991bee12510b1a8e476c9f478e8528
+    return games;
+  };
 }
