@@ -10,6 +10,7 @@ import { AnimeService } from "../../../services/anime.service";
   templateUrl: "anime.html",
 })
 export class AnimePage implements OnInit {
+  anime;
   constructor(
     private animeService: AnimeService,
     private router: Router,
@@ -17,7 +18,8 @@ export class AnimePage implements OnInit {
   ) {}
   async ngOnInit() {
     const id = this.route.snapshot.paramMap.get("animeId");
-    console.log(id);
+    this.anime = await this.animeService.getAnimeById(+id);
+    console.log(this.anime);
   }
 
   backToList() {
