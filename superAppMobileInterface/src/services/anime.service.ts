@@ -7,7 +7,7 @@ export class AnimeService{
 
     }
 
-    getAllAnimes = (): Promise<any> => {
-        return this.http.get<any>('https://kitsu.io/api/edge/anime?page[limit]=20').toPromise()
+    getAllAnimes = (pageId:number): Promise<any> => {
+        return this.http.get<any>(`https://kitsu.io/api/edge/anime?page[limit]=10&page[offset]=${pageId}`).toPromise()
     }
 }

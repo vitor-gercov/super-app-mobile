@@ -7,8 +7,19 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/qig4KOK2R2g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<ion-content>
+  <div class="animePage">
+    <ion-card class="animeCard" *ngFor="let anime of animeList.data" >
+      <img [src]="anime.attributes.posterImage.small">
+      <h2>{{anime.attributes.canonicalTitle}}</h2>
+    </ion-card>
+    
+  </div>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+  <div class="nextPage">
+      <button ion-button (click)="previousPage()" *ngIf="pageNumber !== 0">Previous Page</button>
+      <button ion-button (click)="nextPage()">Next Page</button>
+  </div>
+  
 </ion-content>
+
