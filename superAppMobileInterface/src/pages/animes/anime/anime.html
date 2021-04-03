@@ -16,7 +16,7 @@
       <h2 class="animeDescriptions">
         Trailer:
       </h2>
-      <iframe width="100%" height="40%" src="https://www.youtube.com/embed/anime.data.attributes.youtubeVideoId" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe *ngIf="linkTrailer" width="100%" height="40%" [src]="linkTrailer | safe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <br>
       <h2 class="animeDescriptions">
         Sinopse:

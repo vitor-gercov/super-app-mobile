@@ -11,6 +11,7 @@ import { AnimeService } from "../../../services/anime.service";
 })
 export class AnimePage implements OnInit {
   anime;
+  linkTrailer:string;
   constructor(
     private animeService: AnimeService,
     private router: Router,
@@ -19,6 +20,9 @@ export class AnimePage implements OnInit {
   async ngOnInit() {
     const id = this.route.snapshot.paramMap.get("animeId");
     this.anime = await this.animeService.getAnimeById(+id);
+    if (this.anime.data.attributes.youtubeVideoId){
+      this.linkTrailer = `https://www.youtube.com/embed/${this.anime.data.attributes.youtubeVideoId}`
+    }
     console.log(this.anime);
   }
 
