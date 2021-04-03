@@ -8,5 +8,16 @@
 </ion-header>
 
 <ion-content>
-  <button ion-button (click)="backToList()">Voltar para lista</button>
+  <div class="animePageDetails">
+    <ion-card class="animeCardDetails">
+      <iframe width="100%" height="40%" src="https://www.youtube.com/embed/qig4KOK2R2g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <h2>
+        {{anime}}
+      </h2>
+    </ion-card>
+  </div>
+  
+  <div class="backToListButton">
+    <button ion-button (click)="backToList()">Voltar para lista</button>
+  </div>
 </ion-content>
