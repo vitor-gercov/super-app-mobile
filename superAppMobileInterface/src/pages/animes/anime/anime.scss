@@ -9,7 +9,7 @@
         margin-top: 10px;
         background-color: grey;
         width: 90%;
-        min-height: 600px;
+        height: 800px;
 
         .animeTitle{
             text-align: center;
@@ -18,8 +18,14 @@
 
         .animeDescriptions{
             color: white;
+            margin-left: 10px;
         }
 
+        .textSynopsis{
+            color: white;
+            text-align: justify;
+            margin: 10px;
+        }
     }
 }
 
