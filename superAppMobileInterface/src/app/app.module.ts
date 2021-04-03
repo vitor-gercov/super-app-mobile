@@ -20,6 +20,7 @@ import { HomePageModule } from "../pages/home/home.module";
 import { AnimesPageModule } from "../pages/animes/animes.module";
 import { SpacexPageModule } from "../pages/spacex/spacex.module";
 import { GamesPageModule } from "../pages/games/games.module";
+import { NasaPageModule } from '../pages/nasa/nasa.module'
 
 @NgModule({
   declarations: [MyApp],
@@ -32,6 +33,7 @@ import { GamesPageModule } from "../pages/games/games.module";
     AnimesPageModule,
     SpacexPageModule,
     GamesPageModule,
+    NasaPageModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [IonicApp],

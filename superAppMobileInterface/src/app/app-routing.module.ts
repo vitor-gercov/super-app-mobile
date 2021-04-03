@@ -3,6 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
 import { AnimesPage } from "../pages/animes/animes";
 import { GamesPage } from "../pages/games/games";
 import { HomePage } from "../pages/home/home";
+import { NasaPage } from "../pages/nasa/nasa";
 import { SpacexPage } from "../pages/spacex/spacex";
 
 const routes: Routes = [
@@ -27,6 +28,10 @@ const routes: Routes = [
     path: "spacex",
     component: SpacexPage,
   },
+  {
+    path: "nasa",
+    component: NasaPage,
+  }
 ];
 
 @NgModule({

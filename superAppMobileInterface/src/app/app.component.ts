@@ -33,6 +33,7 @@ export class MyApp {
       { title: "Animes", route: "animes" },
       { title: "Games", route: "games" },
       { title: "SpaceX", route: "spacex" },
+      { title: "NASA", route: "nasa" },
     ];
   }
 
