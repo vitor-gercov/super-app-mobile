@@ -7,9 +7,24 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding id="main-content">
-  <ion-item>
-    <ion-label>DD/MMM/YYYY</ion-label>
-    <ion-datetime displayFormat="DD/MMM/YYYY" placeholder="Select Date"></ion-datetime>
-  </ion-item>
+<ion-content id="apodPage" padding>
+    <ion-item>
+      <ion-label>Imagem Astronomica Do dia</ion-label>
+      <ion-datetime class="datePicker" displayFormat="DD/MMM/YYYY" placeholder="Select Date" [(ngModel)]="pickedDate"(ionChange)="getPickedAPOD()  " ></ion-datetime>
+    </ion-item>
+
+    <div class="containerCard">
+      <strong>{{pictureData.title}}  - Date: {{pictureData.date}} </strong>
+      <ion-card class="apodCard">
+        <figure *ngIf="isImage; else elseBlock">
+          <img [src]="pictureData.url" />
+          <figcaption>Copyright: {{pictureData.copyright}}</figcaption>
+        </figure>
+        <ng-template #elseBlock>
+          <iframe width="560" height="315" [src]="safeUrl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </ng-template>
+      </ion-card>
+    </div>
+    <h6>Explanation</h6>
+    <span>{{pictureData.explanation}}</span>
 </ion-content>

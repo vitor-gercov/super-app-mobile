@@ -21,6 +21,7 @@ import { AnimesPageModule } from "../pages/animes/animes.module";
 import { SpacexPageModule } from "../pages/spacex/spacex.module";
 import { GamesPageModule } from "../pages/games/games.module";
 import { NasaPageModule } from '../pages/nasa/nasa.module'
+import { NasaService } from "../services/nasa.service";
 
 @NgModule({
   declarations: [MyApp],
@@ -44,6 +45,7 @@ import { NasaPageModule } from '../pages/nasa/nasa.module'
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     GameService,
     AnimeService,
+    NasaService
   ],
 })
 export class AppModule {}
