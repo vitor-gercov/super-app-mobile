@@ -1,3 +1,22 @@
+.animePageDetails{
+    width: 100%;
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: center;
 
+    .animeCardDetails{
+        margin-right: 10px;
+        margin-top: 10px;
+        background-color: grey;
+        width: 90%;
+        height: 700px;
+
+    }
+}
+
+.backToListButton{
+    display:flex;
+    justify-content: center;
+}
 
 
