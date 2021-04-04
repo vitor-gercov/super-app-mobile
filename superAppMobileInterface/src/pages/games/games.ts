@@ -90,10 +90,10 @@ export class GamesPage implements OnInit {
     });
 
     this.gamesList = this.setStoreLinks(this.gamesList);
-    console.log(this.gamesList);
   };
 
   setStoreLinks = (games: any[]) => {
+    
     games.forEach((game) => {
       switch (game.storeName) {
         case "Steam":

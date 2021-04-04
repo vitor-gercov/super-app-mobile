@@ -8,7 +8,7 @@ export class GameService {
 
     getAllGames = (): Promise<any> => {
 
-        return this.http.get<any>('https://www.cheapshark.com/api/1.0/deals').toPromise()
+        return this.http.get<any>('https://www.cheapshark.com/api/1.0/deals?storeID=1,4,5,7,8,11,13,25,31').toPromise()
     }
 
     getAllStores = (): Promise<any> => {

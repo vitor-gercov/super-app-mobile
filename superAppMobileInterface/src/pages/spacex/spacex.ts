@@ -1,12 +1,6 @@
 import { Component } from "@angular/core";
-import { IonicPage, NavController, NavParams } from "ionic-angular";
-
-/**
- * Generated class for the SpacexPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { IonicPage } from "ionic-angular";
+import { SpaceXService } from "../../services/spacex.service";
 
 @IonicPage()
 @Component({
@@ -14,9 +8,21 @@ import { IonicPage, NavController, NavParams } from "ionic-angular";
   templateUrl: "spacex.html",
 })
 export class SpacexPage {
-  constructor() {}
+  constructor(private spaceXService: SpaceXService) {}
 
-  ionViewDidLoad() {
-    console.log("ionViewDidLoad SpacexPage");
+  images: string[]
+
+  async ionViewDidLoad() {
+
+    console.log('dale')
+    await this.getData()
+  }
+
+  getData = async () => {
+
+    let response = await this.spaceXService.getData()
+
+    this.images = response.links.flickr.original
+    console.log(this.images)
   }
 }
