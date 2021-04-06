@@ -19,7 +19,7 @@ Get information about pokemons.
 For more details, check https://pokeapi.co/.
 
 ###Astronomy Picture of the Day:
-With this API provided by NASA you can see an astronimic picture of any date.
+With this API provided by NASA you can see an astronomic picture of any date.
 For more details, check https://apod.nasa.gov/apod/astropix.html.
 
 Made By
