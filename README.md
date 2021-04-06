@@ -1,4 +1,4 @@
-# super-app-mobile
+# Mobile Geek
 A project consuming 4 APIs using Ionic as Front End, requested by teacher Daniel
 
 ###CheapSharkAPI:
