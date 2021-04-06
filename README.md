@@ -22,3 +22,11 @@ For more details, check https://pokeapi.co/.
 With this API provided by NASA you can see an astronimic picture of any date.
 For more details, check https://apod.nasa.gov/apod/astropix.html.
 
+Made By
+
+Christian: 082170004
+Vitor: 081180033
+Higor: 081180036
+Renato: 081180038
+Guilherme: 081180011
+
