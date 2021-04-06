@@ -21,7 +21,7 @@ For more details, check https://apod.nasa.gov/apod/astropix.html.
 
 # Como rodar o projeto 
 
-## Para rodar o projeto pela web, entre na pasta raiz do projeto, de npm i, aguarde a instalação de todas as dependências e após isso de npm start.
+Para rodar o projeto pela web, entre na pasta raiz do projeto, de npm i, aguarde a instalação de todas as dependências e após isso de npm start.
 
 
 # Imagens do aplicativo rodando no celular
@@ -31,9 +31,9 @@ For more details, check https://apod.nasa.gov/apod/astropix.html.
 
 # Made By
 
-## Christian: 082170004
-## Vitor: 081180033
-## Higor: 081180036
-## Renato: 081180038
-## Guilherme: 081180011
+Christian: 082170004
+Vitor: 081180033
+Higor: 081180036
+Renato: 081180038
+Guilherme: 081180011
 
