@@ -22,6 +22,11 @@ For more details, check https://pokeapi.co/.
 With this API provided by NASA you can see an astronomic picture of any date.
 For more details, check https://apod.nasa.gov/apod/astropix.html.
 
+
+Imagens do aplicativo rodando no celular
+
+![alt text](https://i.ibb.co/FK2NbzY/app-rodando-cel.jpg)
+
 Made By
 
 Christian: 082170004
