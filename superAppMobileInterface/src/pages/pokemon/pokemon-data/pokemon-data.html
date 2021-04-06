@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Pokémon</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div
+    *ngIf="initialized"
+    [ngStyle]="{'background-color': backgroundColor}"
+    class="pokemonImage"
+  >
+    <div class="pokemonCard">
+      <div class="pokemonCard-image">
+        <h3>{{pokemonData?.name}}</h3>
+        <img [src]="pokemonData?.sprites?.other.dream_world.front_default" />
+      </div>
+      <div class="pokemonCard-information">
+        <span><b>Altura:</b>{{pokemonData?.height}} M</span>
+        <span><b>Peso:</b> {{pokemonData?.weight}} KG</span>
+
+        <hr class="solid" />
+        <div class="skills">
+          <span class="description">Habilidades</span>
+          <div class="skill" *ngFor="let abilitie of pokemonData?.abilities">
+            <span
+              ><b>Nome:</b>
+              <span class="captalize"> {{abilitie.ability.name}}</span></span
+            >
+            <span
+              ><b>Descrição:</b>
+              <span> {{(getPokemonAbility | fn:abilitie | async)}}</span></span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="backToListButton">
+      <button ion-button (click)="backToList()">Voltar para lista</button>
+    </div>
+  </div>
+
+  <div *ngIf="!initialized">
+    <ion-spinner></ion-spinner>
+  </div>
+</ion-content>

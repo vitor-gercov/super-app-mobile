@@ -4,7 +4,7 @@ import { AnimesPage } from "../pages/animes/animes";
 import { GamesPage } from "../pages/games/games";
 import { HomePage } from "../pages/home/home";
 import { NasaPage } from "../pages/nasa/nasa";
-import { SpacexPage } from "../pages/spacex/spacex";
+import { PokemonPage } from "../pages/pokemon/pokemon";
 
 const routes: Routes = [
   {
@@ -25,13 +25,13 @@ const routes: Routes = [
     component: GamesPage,
   },
   {
-    path: "spacex",
-    component: SpacexPage,
+    path: "pokemon",
+    component: PokemonPage,
   },
   {
     path: "nasa",
     component: NasaPage,
-  }
+  },
 ];
 
 @NgModule({

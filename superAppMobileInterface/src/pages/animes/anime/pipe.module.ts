@@ -1,12 +1,12 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { IonicPageModule } from "ionic-angular";
-import { AnimePage } from "./anime";
+import { FnPipe } from "../../pokemon/fn.pipe";
+
 import { SafePipe } from "./safe.pipe";
 
 @NgModule({
-  imports: [CommonModule],  
-  declarations: [SafePipe],
-  exports: [SafePipe]
+  imports: [CommonModule],
+  declarations: [SafePipe, FnPipe],
+  exports: [SafePipe, FnPipe],
 })
 export class PipeModule {}

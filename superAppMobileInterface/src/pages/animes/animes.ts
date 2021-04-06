@@ -1,4 +1,10 @@
-import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from "@angular/core";
+import {
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+} from "@angular/core";
 import { Router } from "@angular/router";
 import { IonicPage, NavController } from "ionic-angular";
 import { BehaviorSubject } from "rxjs";
@@ -33,5 +39,4 @@ export class AnimesPage implements OnInit {
   openAnimePage(anime) {
     this.router.navigate(["animes", anime.id]);
   }
-
 }

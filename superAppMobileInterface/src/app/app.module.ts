@@ -9,7 +9,6 @@ import { GameService } from "../services/game.service";
 import { MyApp } from "./app.component";
 import { GamesPage } from "../pages/games/games";
 import { AnimesPage } from "../pages/animes/animes";
-import { SpacexPage } from "../pages/spacex/spacex";
 
 import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
@@ -18,10 +17,11 @@ import { AnimeService } from "../services/anime.service";
 import { HomePage } from "../pages/home/home";
 import { HomePageModule } from "../pages/home/home.module";
 import { AnimesPageModule } from "../pages/animes/animes.module";
-import { SpacexPageModule } from "../pages/spacex/spacex.module";
+import { PokemonPageModule } from "../pages/pokemon/pokemon.module";
 import { GamesPageModule } from "../pages/games/games.module";
-import { NasaPageModule } from '../pages/nasa/nasa.module'
+import { NasaPageModule } from "../pages/nasa/nasa.module";
 import { NasaService } from "../services/nasa.service";
+import { PokemonService } from "../services/pokemon.service";
 
 @NgModule({
   declarations: [MyApp],
@@ -32,9 +32,9 @@ import { NasaService } from "../services/nasa.service";
     AppRoutingModule,
     HomePageModule,
     AnimesPageModule,
-    SpacexPageModule,
+    PokemonPageModule,
     GamesPageModule,
-    NasaPageModule
+    NasaPageModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [IonicApp],
@@ -45,7 +45,8 @@ import { NasaService } from "../services/nasa.service";
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     GameService,
     AnimeService,
-    NasaService
+    NasaService,
+    PokemonService,
   ],
 })
 export class AppModule {}

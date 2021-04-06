@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Pokémons</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="pokemonPage">
+    <ion-card
+      (click)="openPokemonPage(pokemon)"
+      class="pokemonCard"
+      *ngFor="let pokemon of pokemonList?.results"
+    >
+      <img
+        [src]="(getPokemon | fn:pokemon | async)?.sprites?.other.dream_world.front_default"
+      />
+      <h2>{{pokemon.name}}</h2>
+    </ion-card>
+  </div>
+
+  <div class="nextPage">
+    <button
+      ion-button
+      (click)="previousPage()"
+      *ngIf="pokemonService.pageNumber !== 0"
+    >
+      Previous Page
+    </button>
+    <button ion-button (click)="nextPage()">Next Page</button>
+  </div>
+</ion-content>
