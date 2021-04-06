@@ -23,6 +23,9 @@ With this API provided by NASA you can see an astronomic picture of any date.
 For more details, check https://apod.nasa.gov/apod/astropix.html.
 
 
+Para rodar o projeto pela web, entre na pasta raiz do projeto, de npm i, aguarde a instalação de todas as dependências e após isso de npm start.
+
+
 Imagens do aplicativo rodando no celular
 
 ![alt text](https://i.ibb.co/FK2NbzY/app-rodando-cel.jpg)
