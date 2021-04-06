@@ -26,6 +26,7 @@ For more details, check https://apod.nasa.gov/apod/astropix.html.
 Imagens do aplicativo rodando no celular
 
 ![alt text](https://i.ibb.co/FK2NbzY/app-rodando-cel.jpg)
+![alt text](https://i.ibb.co/QMcmjZf/app-rodando-cel-2.jpg)
 
 Made By
 
