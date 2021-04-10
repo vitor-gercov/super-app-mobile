@@ -3,8 +3,11 @@
     display:flex;
     flex-flow:row wrap;
     justify-content: center;
+    background: rgb(64, 64, 95);
 
     .animeCardDetails{
+        border-radius: 15px;
+        border: 3px solid rgb(197, 197, 197);
         margin-right: 10px;
         margin-top: 10px;
         background-color: grey;
@@ -29,9 +32,17 @@
     }
 }
 
-.backToListButton{
+.content .scroll-content .backToListButton{
+    margin-top: 0px;
+    background: rgb(64, 64, 95);
     display:flex;
     justify-content: center;
+    
+
+    button{
+        border-radius: 20px;
+    border: 3px solid rgb(197, 197, 197);
+    }
 }
 
 

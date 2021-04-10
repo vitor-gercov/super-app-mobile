@@ -4,8 +4,12 @@
 
 .containerCard {
   text-align: center;
+  color: rgb(197, 197, 197);
 
   .apodCard {
+    color: black;
+    border-radius: 15px;
+    border: 3px solid rgb(197, 197, 197);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,5 +26,12 @@
   }
 }
 
+.explain{
+  color: rgb(197, 197, 197);
+}
+
+.scroll-content{
+  background: rgb(64, 64, 95);
+}
 
 
